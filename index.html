@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi sitio</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <style>
+    :root{
+      --bg:#0f172a;        /* Fondo oscuro */
+      --card:#111827;      /* Fondo de tarjeta */
+      --text:#e5e7eb;      /* Texto principal */
+      --muted:#9ca3af;     /* Texto secundario */
+      --accent:#22c55e;    /* Color de énfasis */
+      --radius:14px;
+    }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 20% 0%, #172554 0%, var(--bg) 50%);
+      color: var(--text);
+      display:grid;
+      place-items:center;
+      min-height:100vh;
+      padding:24px;
+    }
+    .block{
+      width:min(760px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+                  var(--card);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+      overflow: clip;
+    }
+    .header{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:18px 22px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .badge{
+      inline-size:42px; block-size:42px;
+      display:grid; place-items:center;
+      border-radius:12px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.25), rgba(34,197,94,0.05));
+      color: var(--accent);
+      font-weight:700;
+    }
+    .title{ font-size:1.15rem; font-weight:700; letter-spacing:0.2px; }
+    .subtitle{ color: var(--muted); font-size:0.95rem; }
+    .content{
+      padding:22px;
+      display:grid;
+      gap:14px;
+      line-height:1.6;
+    }
+    .list{
+      display:grid; gap:8px; margin:0; padding-left:1.1rem;
+    }
+    .callout{
+      border-left:4px solid var(--accent);
+      background: rgba(34,197,94,0.08);
+      padding:12px 14px;
+      border-radius:10px;
+      color:#d1fae5;
+    }
+    .footer{
+      display:flex; justify-content:space-between; align-items:center;
+      gap:12px; padding:16px 22px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .btn{
+      appearance:none; border:0; cursor:pointer;
+      padding:10px 14px; border-radius:10px; font-weight:600;
+      background: rgba(34,197,94,0.15); color: var(--accent);
+      transition: transform 120ms ease, background 120ms ease;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(34,197,94,0.25); }
+    .meta{ color: var(--muted); font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <article class="block" role="region" aria-labelledby="titulo">
+    <header class="header">
+      <div class="badge" aria-hidden="true">WEB</div>
+      <div>
+        <h1 id="titulo" class="title">Publica tu página web en GitHub paso a paso</h1>
+        <p class="subtitle">Explicación breve para principiantes</p>
+      </div>
+    </header>
+
+    <section class="content">
+      <p><strong>Idea clave:</strong> Recuerda tener todo el material de trabajo de tu web en un solo archivo🗂️ y organizado para facilitar el proceso.</p>
+
+      <div class="callout" role="note">
+        <strong>Recuerda:</strong> Crea un archivo🗂️ con el nombre tu web en este caso *Mi sitio* dentro de este archivo debe ir un archivo *html* - un archivo para las imagenes (img🗂️) - un archivo para video (vd🗂️) - un archivo para codigo css (css🗂️).
+        <br>
+        <strong>Ejemplo:</strong> (Mi sitio🗂️ (html - ing🗂️ - css🗂️)).
+        <br>
+        <strong>Nota:</strong> La cantidad de archivos para tu página web varia segun el contenido que le integres.
+      </div>
+
+      <h2 style="margin:8px 0 0;">Instructivo paso a paso</h2>
+      <ul class="list">
+        <li><strong>Primero:</strong>
+          Ingresar al sitio web <a href="https://github.com/" target="_blank">GitHub</a>para crear una cuenta donde se subiran los archivos que componen tu web.</li>
+        <li><strong>Segundo:</strong>
+          Dar clic en el boton <img src="img/sign-up.png" alt="boton" height="20" style="vertical-align:middle; margin-left:4px;"> para iniciar el proceso de crear una cuenta.</li>
+        <li><strong>Tercero:</strong>
+          Completar los datos requeridos para la creación de la cuenta o continuar usando la cuenta de *gmail* existente.</li>
+          <img src="img/d-cuenta.png" alt="cuenta" height="400" style="display:block; margin:10px auto;">
+        <li><strong>Cuarto:</strong>
+          Despues de ingresar a la cuenta creada se nos mostrara la siguiente ventana. Por lo tanto proseguimos al dar clic en el boton <img src="img/boton-n.png" alt="boton" height="20" style="vertical-align:middle; margin-left:4px;"> como se ve resaltado en la imagen
+          <img src="img/new.png" alt="new" height="300" style="display:block; margin:10px auto;">
+          </li>
+        <li><strong>Quinto:</strong>
+          En la sección donde dice <strong>Repository name*</strong> colocar un nombre para identificar nuestro sitio, si el nombre es valido nos debe decir que el nombre es valido <img src="img/g-name.png" alt="valido" height="40" style="vertical-align:middle; margin-left:4px;"> como vemos en el ejemplo
+          en la sección donde dice <strong>Description</strong> se puede escribir algo o dejarlo en banco esa parte es opcional, en la siguiente parte <strong>Configuration</strong> se daja tal y como esta <img src="img/public.png" alt="publico" height="20" style="vertical-align:middle; margin-left:4px;">
+          y por ultimo damos clic en el boton <strong>Create repository.</strong>
+          <img src="img/create-repository.png" alt="repositorio" height="300" style="display:block; margin:10px auto;">
+          </li>
+        <li><strong>Sexto:</strong>
+          En la ventana recien desplegada procedemos a dirigirnos al hipervinculo <strong>uploading an existing file</strong> señalado como se ve en la imagen este enlace nos enviara de forma directa al lugar donde se cargaran los archivos que componen nuestro sitio web.
+          <img src="img/cargar-archivo.png" alt="cargar archivos" height="300" style="display:block; margin:10px auto;">
+          </li>
+        <li><strong>Septimo:</strong>
+          En esta sección debemos colocar los archivos que comforman nuestro sitio web, podemos dar clic en <strong>choose your files</strong> para desplegar la ventana y buscar los archivos que se desean cargar o directamente se pueden arrastras hasta el espacio designado.
+          <br>
+          <strong>Nota: Esta plataforma solo permite cargar un maximo de 100 archivos</strong>
+          <img src="img/archivos-rep.png" alt="archivos repositorio" height="300" style="display:block; margin:10px auto;">
+          </li>
+        <li><strong>Octabo:</strong>
+          Una vez cargados los archivos nos dirigimos a la parte inferior y damos clic en el boton <img src="img/b-commit.png" alt="b-commit" height="20" style="vertical-align:middle; margin-left:4px;"> y esperamos que cargue.
+          <img src="img/commit-changes.png" alt="archivos repositorio" height="300" style="display:block; margin:10px auto;">
+          </li>
+        <li><strong>Noveno:</strong>
+          Despues de completada la carga damos clic en el boton <img src="img/setting.png" alt="setting" height="20" style="vertical-align:middle; margin-left:4px;">, seguimos dando clic donde dice <img src="img/pages.png" alt="pages" height="20" style="vertical-align:middle; margin-left:4px;">, continuamos al dirigirnos a la sección donde
+          dice <strong>Branch</strong> y seleccionamos la opción <strong>main</strong> y por ultimo damos clic en el boton <img src="img/save.png" alt="save" height="20" style="vertical-align:middle; margin-left:4px;">, esperamos unos momentos a que se carguen los datos, despues damos clic nuevamente en el boton <strong>Pages</strong> para recargar la página y vemos que nos aparece una nueva sección.
+          <img src="img/main.png" alt="main" height="300" style="display:block; margin:10px auto;">
+          </li>
+        <li><strong>Decimo:</strong>
+          Una vez recargada la página nos debe aparecer una sección con el <strong>URL</strong> de nuestra web. Ya llegado a este paso solo es cuestion de copiar el enlace en el navegador y dar enter.
+          <img src="img/url.png" alt="url" height="100" style="display:block; margin:10px auto;">
+          </li>
+    <footer class="footer">
+      <span class="meta">Duración estimada de lectura: 2–3 min</span>
+    </footer>
+  </article>
+</body>
+</html>
