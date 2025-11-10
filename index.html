@@ -80,6 +80,30 @@
     }
     .btn:hover{ transform: translateY(-1px); background: rgba(34,197,94,0.25); }
     .meta{ color: var(--muted); font-size:0.9rem; }
+    /* 📱 Ajustes para móviles */
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .title {
+        font-size: 1rem;
+      }
+      .subtitle {
+        font-size: 0.85rem;
+      }
+      .content {
+        padding: 14px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .btn {
+        width: 100%;          /* Botones más fáciles de tocar */
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -152,4 +176,5 @@
 </body>
 
 </html>
+
 
