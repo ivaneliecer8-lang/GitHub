@@ -172,11 +172,20 @@
           </li>
     <footer class="footer">
       <span class="meta">Duración estimada de lectura: 12–13 min</span>
+      <span class="meta">Visitas en este navegador: <span id="contador"></span></span>
     </footer>
+        <script>
+          let visitas = localStorage.getItem("visitas");
+          if (!visitas) { visitas = 0; }
+          visitas++;
+          localStorage.setItem("visitas", visitas);
+          document.getElementById("contador").textContent = visitas;
+        </script>
   </article>
 </body>
 
 </html>
+
 
 
 
