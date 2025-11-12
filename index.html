@@ -172,19 +172,43 @@
           </li>
     <footer class="footer">
       <span class="meta">Duración estimada de lectura: 12–13 min</span>
-      <span class="meta">Visitas en este navegador: <span id="contador"></span></span>
-    </footer>
-        <script>
-          let visitas = localStorage.getItem("visitas");
-          if (!visitas) { visitas = 0; }
-          visitas++;
-          localStorage.setItem("visitas", visitas);
-          document.getElementById("contador").textContent = visitas;
-        </script>
+      <span class="meta">Visitas totales: <span id="contador"></span></span>
+    </footer><!-- Scripts de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <script>
+    // ⚠️ Reemplaza estos valores con los de tu proyecto Firebase
+    const firebaseConfig = {
+      apiKey: "TU_API_KEY",
+      authDomain: "TU_DOMINIO.firebaseapp.com",
+      databaseURL: "https://TU_DOMINIO.firebaseio.com",
+      projectId: "TU_ID",
+      storageBucket: "TU_BUCKET.appspot.com",
+      messagingSenderId: "TU_SENDER_ID",
+      appId: "TU_APP_ID"
+    };
+
+    // Inicializar Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Referencia al contador
+    const ref = db.ref("visitas");
+
+    // Incrementar visitas cada vez que alguien entra
+    ref.transaction(function(current) {
+      return (current || 0) + 1;
+    });
+
+    // Mostrar visitas en tiempo real
+    ref.on("value", function(snapshot) {
+      document.getElementById("contador").textContent = snapshot.val();
+    });
+  </script>
   </article>
 </body>
-
 </html>
+
 
 
 
